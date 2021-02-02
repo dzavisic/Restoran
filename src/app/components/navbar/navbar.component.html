@@ -1,7 +1,8 @@
 <body>
     <header>
+       <!--
         <nav>
-            <div class="menu-icon text-dark">
+            <div class="menu-icon text-dark navbar-toggle"data-toggle="collapse" data-target="menu">
                <i class="fa fa-bars fa-2x"></i>
             </div>
             <div class="logo">
@@ -14,10 +15,44 @@
                   <li><a href="order" style="font-weight: bold;">NARUČI</a></li>
                   <li><a href="about" style="font-weight: bold;">O NAMA</a></li>
                   <li><a href="location" style="font-weight: bold;">LOKACIJA</a></li>
-                  <li><a href="reservation" style="font-weight: bold;">REZERVACIJA</a></li>
+                  <li><a href="reservation" style="font-weight: bold; padding: 10px 12px; border: 3px solid white;">REZERVACIJA</a></li>
                </ul>
             </div>
-        </nav> 
+        </nav>-->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-fixed-top pt-5" style="background-color: transparent !important;">
+         <a class="navbar-brand d-none d-xl-block d-lg-block" href=""><img src="../assets/img/logo.png" style="width: 200px; height: 200px;"></a>
+
+         <button class="navbar-toggler navbar-toggler-right bg-secondary" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+         </button>
+
+            
+         
+         
+         <div [ngbCollapse]="isNavbarCollapsed" class="navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav navbar-right" style="margin-left:auto !important;">
+              <li class="nav-item pr-5">
+                <a class="nav-link text-white font-weight-bold" href="">NASLOVNICA</a>
+              </li>
+              <li class="nav-item pr-5">
+                <a class="nav-link text-white font-weight-bold" href="menu">MENI</a>
+              </li>
+              <li class="nav-item pr-5">
+                <a class="nav-link text-white font-weight-bold" href="order">NARUČI</a>
+              </li>
+              <li class="nav-item pr-5">
+                <a class="nav-link text-white font-weight-bold" href="about">O NAMA</a>
+              </li>
+              <li class="nav-item pr-5">
+                <a class="nav-link text-white font-weight-bold" href="location">LOKACIJA</a>
+              </li>
+              <li class="nav-item pr-5">
+                <a class="nav-link text-white font-weight-bold" style="font-weight: bold; padding: 10px 12px; border: 3px solid white;" href="reservation">REZERVACIJA</a>
+              </li>
+            </ul>
+         </div>
+       </nav>
+     
     </header>
 
 </body>
