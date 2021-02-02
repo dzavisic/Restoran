@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NarudzbeComponent } from './narudzbe.component';
+import { LocationComponent } from './location.component';
 
-describe('NarudzbeComponent', () => {
-  let component: NarudzbeComponent;
-  let fixture: ComponentFixture<NarudzbeComponent>;
+describe('LocationComponent', () => {
+  let component: LocationComponent;
+  let fixture: ComponentFixture<LocationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NarudzbeComponent ]
+      declarations: [ LocationComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NarudzbeComponent);
+    fixture = TestBed.createComponent(LocationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

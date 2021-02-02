@@ -6,22 +6,22 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { PonudaComponent } from './components/ponuda/ponuda.component';
-import { NarudzbeComponent } from './components/narudzbe/narudzbe.component';
-import { OnamaComponent } from './components/onama/onama.component';
-import { LokacijaComponent } from './components/lokacija/lokacija.component';
-import { RezervacijaComponent } from './components/rezervacija/rezervacija.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { OrderComponent } from './components/order/order.component';
+import { AboutComponent } from './components/about/about.component';
+import { LocationComponent } from './components/location/location.component';
+import { ReservationComponent } from './components/reservation/reservation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    PonudaComponent,
-    NarudzbeComponent,
-    OnamaComponent,
-    LokacijaComponent,
-    RezervacijaComponent
+    MenuComponent,
+    OrderComponent,
+    AboutComponent,
+    LocationComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserModule,

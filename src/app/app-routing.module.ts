@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
-import { PonudaComponent } from './components/ponuda/ponuda.component';
-import { NarudzbeComponent } from './components/narudzbe/narudzbe.component';
-import { OnamaComponent } from './components/onama/onama.component';
-import { LokacijaComponent } from './components/lokacija/lokacija.component';
-import { RezervacijaComponent } from './components/rezervacija/rezervacija.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { OrderComponent } from './components/order/order.component';
+import { AboutComponent } from './components/about/about.component';
+import { LocationComponent } from './components/location/location.component';
+import { ReservationComponent } from './components/reservation/reservation.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'ponuda', component: PonudaComponent },
-  { path: 'narudzbe', component: NarudzbeComponent },
-  { path: 'onama', component: OnamaComponent },
-  { path: 'lokacija', component: LokacijaComponent},
-  { path: 'rezervacija', component: RezervacijaComponent }
+  { path: 'menu', component: MenuComponent },
+  { path: 'order', component: OrderComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'location', component: LocationComponent},
+  { path: 'reservation', component: ReservationComponent }
 ];
 
 @NgModule({
