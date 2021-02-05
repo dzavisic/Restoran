@@ -21,7 +21,7 @@ function Connection() {
     this.init = function() {
       this.pool = mysql.createPool({
         connectionLimit: 250, // privremeno jer blokira slanje zahtjeva na APi nakon toliko puta (mozda je problem u proceduri)
-        host: 'localhost',
+        host: '127.0.0.1',
         user: 'root',
         password: '',
         database: 'restoran'

@@ -1,10 +1,56 @@
-var pool     = require('../connection');
+var mysql = require('mysql');
+
+var apiToken = require('api-token');
+
+var pool = require('../connection');
+
+var fs = require('fs');
 
 var functions = {
 
 sendRes: function(res, data){
     res.json({ success: data.success, message: data.message, status: data.status, data:data.data});
     return 1;
+},
+
+mysql_query:function(upit, callback){
+    //console.log(upit);
+    function funkcija1(a, callback){
+        
+        pool.getConnection(function(err, connection){
+            if(err) {
+                //connection.release();
+                callback(500, err);
+            }else{
+                connection.query(a,function(err, rows) {
+                    connection.release();
+                    if(err){
+                        console.log(err);
+                        callback(501, err);
+                    }else{
+                        callback(true, rows);
+                    }                          
+                });
+            }
+        });
+    }
+
+    try{
+        if(typeof(upit)==='string'){
+            funkcija1(upit, function(rezultat, podaci){
+                if(rezultat == true){
+                    callback({ success: true, message: 'Uspješno', status: rezultat, data:podaci });
+                }else{
+                    callback({ success: false, message: 'Greška konekcije ili baze', status: rezultat, data:podaci });
+                }
+            });
+        }else{
+            callback({ success: false, message: 'Upit nije poslan u dobrom obliku!', status: 502, data:[] });
+        }
+    }catch(err){
+        console.log(err);
+        callback({ success: false, message: 'Greška, provjerite podatke koje šaljete.', status: 503, data:err });
+    }
 },
 
 mysql_queryV2:function(_query, callback){
@@ -64,6 +110,20 @@ mysql_queryV2:function(_query, callback){
         console.log(err);
         callback({ success: false, message: 'Error, check the data passed data!', status: 503, data:err });
     }
+},
+err_data: { success: false, message: 'Greška, provjerite podatke koje šaljete.', status: 502, data:[] },
+err_validation: function(data){
+    //let a= JSON.stringify(err);
+    return {success: false, message: 'Greška validacije', status: 504, data:data}
+},
+err_custom: function(success, message, status, data){
+    //let a= JSON.stringify(err);
+    return {success: success, message: message, status: status, data:data}
+},
+err_unknown: function(err){
+    console.log(err);
+    //let a= JSON.stringify(err);
+    return {success: false, message: 'Greška, provjerite podatke koje šaljete.', status: 503, data:err}
 }
 };
 
