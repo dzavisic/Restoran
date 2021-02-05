@@ -1,58 +1,35 @@
 <body>
     <header>
-       <!--
-        <nav>
-            <div class="menu-icon text-dark navbar-toggle"data-toggle="collapse" data-target="menu">
-               <i class="fa fa-bars fa-2x"></i>
-            </div>
-            <div class="logo">
-               <a href=""><img src="../assets/img/logo.png" style="width: 200px; height: 200px;"></a>
-            </div>
-            <div class="menu">
-               <ul>
-                  <li><a href="" style="font-weight: bold;">NASLOVNICA</a></li>
-                  <li><a href="menu" style="font-weight: bold;">PONUDA</a></li>
-                  <li><a href="order" style="font-weight: bold;">NARUČI</a></li>
-                  <li><a href="about" style="font-weight: bold;">O NAMA</a></li>
-                  <li><a href="location" style="font-weight: bold;">LOKACIJA</a></li>
-                  <li><a href="reservation" style="font-weight: bold; padding: 10px 12px; border: 3px solid white;">REZERVACIJA</a></li>
-               </ul>
-            </div>
-        </nav>-->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-fixed-top pt-5" style="background-color: transparent !important;">
+        <nav class="navbar navbar-expand-md navbar-dark bg-trasparent navbar-fixed-top pt-4" id="navi">
          <a class="navbar-brand d-none d-xl-block d-lg-block" href=""><img src="../assets/img/logo.png" style="width: 200px; height: 200px;"></a>
 
-         <button class="navbar-toggler navbar-toggler-right bg-secondary" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+         <button class="navbar-toggler mr-auto ml-auto" style="background-color: #cfa670;" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="width: 50px; height: 50px;"></span>
          </button>
 
-            
-         
-         
          <div [ngbCollapse]="isNavbarCollapsed" class="navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right" style="margin-left:auto !important;">
               <li class="nav-item pr-5">
-                <a class="nav-link text-white font-weight-bold" href="">NASLOVNICA</a>
+                <a class="nav-link font-weight-bold" style="font-size: larger; color:black;" href="">NASLOVNICA</a>
               </li>
               <li class="nav-item pr-5">
-                <a class="nav-link text-white font-weight-bold" href="menu">MENI</a>
+                <a class="nav-link  font-weight-bold" style="font-size: larger; color:black;" href="menu">MENI</a>
               </li>
               <li class="nav-item pr-5">
-                <a class="nav-link text-white font-weight-bold" href="order">NARUČI</a>
+                <a class="nav-link  font-weight-bold" style="font-size: larger; color:black;" href="order">NARUČI</a>
               </li>
               <li class="nav-item pr-5">
-                <a class="nav-link text-white font-weight-bold" href="about">O NAMA</a>
+                <a class="nav-link  font-weight-bold" style="font-size: larger; color:black;" href="about">O NAMA</a>
               </li>
               <li class="nav-item pr-5">
-                <a class="nav-link text-white font-weight-bold" href="location">LOKACIJA</a>
+                <a class="nav-link  font-weight-bold" style="font-size: larger; color:black;" href="location">LOKACIJA</a>
               </li>
               <li class="nav-item pr-5">
-                <a class="nav-link text-white font-weight-bold" style="font-weight: bold; padding: 10px 12px; border: 3px solid white;" href="reservation">REZERVACIJA</a>
+                <a class="nav-link  font-weight-bold" style="color:black; font-weight: bold; padding: 10px 12px; border: 3px solid black; font-size: larger;" href="reservation">REZERVACIJA</a>
               </li>
             </ul>
          </div>
        </nav>
      
     </header>
-
 </body>

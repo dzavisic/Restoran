@@ -1,0 +1,37 @@
+.background1 {
+    width: 100% !important;
+    height: 100vh;
+    background-image: url('../../../assets/img/naslovnaEdit.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.background3 {
+    padding-top: 10px;
+    width: 100% !important;
+    height: 145vh;
+    background-image: url('../../../assets/img/20210131_140037.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.background2 {
+    width: 100% !important;
+    height: 120vh;
+    background-image: url('../../../assets/img/o-nama-luburicEdit.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.parallax {
+    /* The image used */
+    background-image: url("../../../assets/img/parallax.jpg");
+  
+    /* Set a specific height */
+    height: 500px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

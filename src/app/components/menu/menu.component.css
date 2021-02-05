@@ -1,0 +1,78 @@
+.background1 {
+  width: 100% !important;
+  height: 100vh;
+  background-image: url('../../../assets/img/naslovnaEdit.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.background3 {
+  padding-top: 10px;
+  width: 100% !important;
+  height: 145vh;
+  background-image: url('../../../assets/img/20210131_140037.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.background2 {
+  width: 100% !important;
+  height: 120vh;
+  background-image: url('../../../assets/img/o-nama-luburicEdit.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.parallax {
+  /* The image used */
+  background-image: url("../../../assets/img/parallax.jpg");
+
+  /* Set a specific height */
+  height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#firstContainer {
+  padding-top: 130px;
+}
+#secondContainer {
+  padding-top: 200px;
+}
+
+
+#underlining {
+  border-bottom: 1px solid #cfa670;
+  width:70%;
+}
+#underlining2 {
+  border-bottom: 2px solid #cfa670;
+  width:100%;
+}
+
+#fonty {
+  color: #cfa670;
+  font-family: 'Kristi', cursive;
+}
+#fonty2 {
+  color: #cfa670;
+  font-family: 'Kristi', cursive;
+}
+
+#coldAppetizer, #warmAppetizer, #mainCourse, #salad, #desert {
+  color: #cfa670;
+}
+
+
+@media( max-width: 1000px ){
+  h2 {
+    font-size: 2.5vw !important;
+  }
+  #sizing {
+    font-size: 2.5vw !important;;
+  }
+}
+
+
