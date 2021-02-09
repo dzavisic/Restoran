@@ -125,6 +125,9 @@ err_unknown: function(err){
     //let a= JSON.stringify(err);
     return {success: false, message: 'Greška, provjerite podatke koje šaljete.', status: 503, data:err}
 }
+
 };
+
+
 
 module.exports = functions;

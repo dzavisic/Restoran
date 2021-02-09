@@ -1,5 +1,6 @@
 var express     = require('express');
 var mysql       = require('mysql');
+var bcrypt      = require('bcrypt');
 var app         = express();
 var http        = require('http');
 var md5         = require('MD5');
