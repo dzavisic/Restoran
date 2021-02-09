@@ -1,7 +1,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-trasparent navbar-fixed-top pt-4" id="navi">
-         <a class="navbar-brand d-none d-xl-block d-lg-block" href=""><img src="../assets/img/logo.png" style="width: 200px; height: 200px;"></a>
+         <a class="navbar-brand d-none d-xl-block d-lg-block" [routerLink]="['/']"><img src="../assets/img/logo.png" style="width: 200px; height: 200px;"></a>
 
          <button class="navbar-toggler mr-auto ml-auto" style="background-color: #cfa670;" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon" style="width: 50px; height: 50px;"></span>
@@ -10,22 +10,22 @@
          <div [ngbCollapse]="isNavbarCollapsed" class="navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right" style="margin-left:auto !important;">
               <li class="nav-item pr-5">
-                <a class="nav-link font-weight-bold" style="font-size: larger; color:black;" href="">NASLOVNICA</a>
+                <a class="nav-link font-weight-bold" style="font-size: larger; color:black;" [routerLink]="['/']">NASLOVNICA</a>
               </li>
               <li class="nav-item pr-5">
                 <a class="nav-link  font-weight-bold" style="font-size: larger; color:black;" href="menu">MENI</a>
               </li>
               <li class="nav-item pr-5">
-                <a class="nav-link  font-weight-bold" style="font-size: larger; color:black;" href="order">NARUČI</a>
+                <a class="nav-link  font-weight-bold" style="font-size: larger; color:black;" [routerLink]="['/order']">NARUČI</a>
               </li>
               <li class="nav-item pr-5">
-                <a class="nav-link  font-weight-bold" style="font-size: larger; color:black;" href="about">O NAMA</a>
+                <a class="nav-link  font-weight-bold" style="font-size: larger; color:black;" [routerLink]="['/about']">O NAMA</a>
               </li>
               <li class="nav-item pr-5">
-                <a class="nav-link  font-weight-bold" style="font-size: larger; color:black;" href="location">LOKACIJA</a>
+                <a class="nav-link  font-weight-bold" style="font-size: larger; color:black;" [routerLink]="['/location']">LOKACIJA</a>
               </li>
               <li class="nav-item pr-5">
-                <a class="nav-link  font-weight-bold" style="color:black; font-weight: bold; padding: 10px 12px; border: 3px solid black; font-size: larger;" href="reservation">REZERVACIJA</a>
+                <a class="nav-link  font-weight-bold" style="color:black; font-weight: bold; padding: 10px 12px; border: 3px solid black; font-size: larger;" [routerLink]="['/reservation']">REZERVACIJA</a>
               </li>
             </ul>
          </div>
