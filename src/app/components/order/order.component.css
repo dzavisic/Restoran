@@ -34,4 +34,48 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
+
+#firstContainer {
+    padding-top: 130px;
+    color: #cfa670;
+}
+
+#fonty {
+    color: #cfa670;
+    font-family: 'Kristi', cursive;
+}
+#underlining {
+    border-bottom: 1px solid #cfa670;
+    width: 100%;
+}
+#underlining2 {
+    border-bottom: 1px solid #cfa670;
+    width: 100%;
+    margin-left: 1px !important;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+    z-index: 3;
+    color: #292526;
+    background-color: #cfa670 !important;
+    border: solid 1px #cfa670 !important;
+}
+
+.pagination > li > a
+{
+    color:#cfa670;
+    background-color: #292526 !important;
+    border-color: #cfa670;
+}
+
+
+.pagination > .active > a
+{
+    color: #292526;
+    background-color: #cfa670 !important;
+    border: solid 1px #cfa670 !important;
+}

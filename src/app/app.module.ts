@@ -15,7 +15,7 @@ import { AboutComponent } from './components/about/about.component';
 import { LocationComponent } from './components/location/location.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AuthModule } from './components/auth/auth.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { AuthModule } from './components/auth/auth.module';
     OrderComponent,
     AboutComponent,
     LocationComponent,
-    ReservationComponent
+    ReservationComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +35,7 @@ import { AuthModule } from './components/auth/auth.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AuthModule
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,24 +4,86 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Kristi&display=swap" rel="stylesheet">
     <div class="background1">
-      <div class="card p-3 col-6">
-        <form [formGroup]="loginForm">
-          <div class="form-group">
-            <input formControlName="username" class="form-control" type="text" placeholder="Username">
+      <div class="container" id="firstContainer">
+        <!--JELOVNIK ROW-->
+        <div class="row justify-content-center align-items-middle pb-5" id="jelovnik">
+            <h1 id="fonty" style="font-size:100px; font-weight: 200;">Jelovnik</h1>
+        </div>
+        <!--HRANA I KOŠARICA ROW-->
+        <div class="row justify-content-md-center"id="expandedOrder">
+          <!--HRANA ZA EXPANDED PRIKAZ-->
+          <div class="col-lg-6 col-xl-6 col-md-6 hidden-sm hidden-xs" id="newExpListing" style="background-color: #292526;">
           </div>
-          <div class="form-group">
-            <input formControlName="password"  class="form-control" type="password" placeholder="Password">
+          <!--KOŠARICA ZA EXPANDED PRIKAZ-->
+          <div class="col-lg-6 col-xl-6 col-md-6 hidden-sm hidden-xs" style="background-color: #292526;">
+            <div class="row " id="underlining2">
+              <h2 style="font-weight:bold;padding-right:10px;">NARUDŽBA</h2>
+            </div>
+            <div class="row " id="cartlist" id="underlining2">
+              <div class="pt-2" id="cartitems">               
+              </div>
+            </div>
+            <div class="row " id="underlining2">
+              <div class="pt-2 d-flex align-items-center">
+                <div>
+                  <h2 style="padding-right:10px;">UKUPNO:</h2>
+                </div>
+                
+                <div id="priceSum">
+
+                </div>
+              </div>
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
-        </form>
+
+          <!--HRANA ZA COLLAPSED PRIKAZ-->
+          <div class="col-sm-12 col-xs-12 hidden-md hidden-xl hidden-lg" style="background-color: #292526;" id="dishesMin">
+          </div>
+          <!--PAGINACIJA ZA COLLAPSED PRIKAZ-->
+          <div class="col-sm-12 col-xs-12 d-flex justify-content-center hidden-md hidden-xl hidden-lg" style="background-color: #292526;">
+            <nav aria-label="..." class="skin-secondary-color">
+              <ul class="pagination pagination-lg">
+                <li class="page-item">
+                  <a class="page-link"  onclick="listColdJs()" tabindex="-1">1</a>
+                </li>
+                <li class="page-item"><a class="page-link"  onclick="listWarmJs()">2</a></li>
+                <li class="page-item"><a class="page-link"  onclick="listMainJs()">3</a></li>
+                <li class="page-item"><a class="page-link"  onclick="listSaladJs()">4</a></li>
+                <li class="page-item"><a class="page-link"  onclick="listDesertJs()">5</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!--KOŠARICA ZA COLLAPSED PRIKAZ-->
+          <div class="col-sm-12 col-xs-12 hidden-md hidden-xl hidden-lg" style="background-color: #292526;">            
+            <div class="row" id="underlining2">
+              <h2 style="font-weight:bold;padding-right:10px;">NARUDŽBA</h2>
+            </div>
+            <div class="row" id="cartlist" id="underlining2">
+              <div class="pt-2" id="cartitemsMin">               
+              </div>
+            </div>
+            <div class="row " id="underlining2">
+              <div class="pt-2 d-flex align-items-center">
+                <div>
+                  <h2 style="padding-right:10px;">UKUPNO:</h2>
+                </div>
+                
+                <div id="priceSumMin">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="parallax"></div>
-    <div class="background2">
-
-    </div>
+    <div class="background2"></div>
     <div class="text-white">
+        <!--FOOTER-->
         <footer class="bg-dark bg-gradient" style="height: 120px;">
             <div class="d-flex justify-content-middle align-items-middle">
               <div class="d-none d-sm-none d-md-block">
@@ -41,6 +103,6 @@
                 <h6>INSTAGRAM</h6>
               </div>   
             </div>
-          </footer>
+        </footer>
     </div>
 </body>
