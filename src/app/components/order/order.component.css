@@ -39,6 +39,7 @@
 #firstContainer {
     padding-top: 130px;
     color: #cfa670;
+    animation: transitionIn 1s;
 }
 
 #fonty {
@@ -78,4 +79,10 @@
     color: #292526;
     background-color: #cfa670 !important;
     border: solid 1px #cfa670 !important;
+}
+
+#fixedtop
+{
+    position: sticky !important;
+    top: 0 !important;
 }

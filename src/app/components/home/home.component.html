@@ -38,11 +38,11 @@
         <div class="background2">
             <div class="container">
                 <div class="row">
-                    <div class="offset-1 col-3">
+                    <div class="offset-1 col-3 hidden-xs hidden-sm">
                         <h1 id="rest1" class="d-none d-sm-none d-md-block"  style="font-size:80px; font-weight: bold; color: #cfa670; padding-top: 200px;">Dobar tek...</h1>
                     </div>
-                    <div class="offset-1 col-md-6">
-                        <ngb-carousel *ngIf="images">
+                    <div class="offset-xl-1 offset-lg-1 offset-md-1 col-md-10 col-lg-6 col-sm-12">
+                        <ngb-carousel *ngIf="images" id="carouselOut">
                             <ng-template ngbSlide>
                               <div class="picsum-img-wrapper">
                                 <img class="img-fluid" [src]="images[0]" style="width: 550px; height: 500px;" alt="Random first slide">

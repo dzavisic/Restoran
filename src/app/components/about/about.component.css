@@ -4,6 +4,7 @@
     background-image: url('../../../assets/img/naslovnaEdit.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    
 }
 
 .background3 {
@@ -34,4 +35,52 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
+
+#firstContainer {
+    padding-top: 200px;
+    color: #cfa670;
+    animation: transitionIn 1s;
+}
+#secondContainer{
+    animation: transitionIn 1s;
+}
+#aboutUs{
+    background-color: #292526;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+#povijest {
+    color: #cfa670;
+    font-style: italic;
+    font-family: 'Kristi', cursive;
+    font-size: 70px; z-index: 100; position: absolute;
+}
+
+#obitelj{
+    color:white; font-size: 50px; font-family: Roboto; padding-top: 60px;
+}
+
+#underlining {
+    border-bottom: 1px solid #cfa670;
+    width: 100%;
+}
+
+#text {
+    color:white;
+    font-family: Roboto;
+    font-size:15.7px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    outline: none;
+}
+
+#fonty {
+    color: #cfa670;
+    font-family: 'Kristi', cursive;
+}
+

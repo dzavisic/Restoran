@@ -15,6 +15,15 @@ var txtcart = [];
 var priceSum=0;
 var cartItems = [];
 
+/* POZOVE SE SVAKI PUT KAD SE STISNE GUMB NA NAVBARU, DA ODE SCROLL NA TOP */
+function scrolltop(){
+    window.scroll({
+        top:0,
+        left:0,
+        behavior: 'smooth'
+    });
+}
+
 /* IZLISTAVA SVA JELA ZA MAXIMIZIRAN SCREEN */
 function listAllFoodExpanded(){
     let text = `
@@ -89,9 +98,9 @@ function listAllFoodExpanded(){
     if(document.getElementById("mainCourseOrder")!= null){
         let doc = document.getElementById("mainDishesOrder");
         let prev = doc.innerHTML;
-        for(i=0; i<dataMain.length; i++){
-            if(dataMain[i] != undefined){
-                doc.innerHTML = prev + dataMain[i];
+        for(i=0; i<dataMainOrder.length; i++){
+            if(dataMainOrder[i] != undefined){
+                doc.innerHTML = prev + dataMainOrder[i];
                 prev = doc.innerHTML;
             }
         }
@@ -116,7 +125,33 @@ function listAllFoodExpanded(){
             }
         }
     }
+}
 
+/*  */
+function listColdJsInit(){
+    let text = `<div id="coldAppetizerMin">
+                    <div class="d-flex align-items-center" id="underlining">
+                        <h2 style="font-weight:bold;padding-right:10px;">HLADNO</h2>
+                        <h2>PREDJELO</h2>
+                    </div>
+                    <div class="pt-2" id="coldDishesMin">
+                    </div>
+                </div>`;
+    var dishesMin = document.getElementById("dishesMin");
+    if(dishesMin!=null){
+        dishesMin.innerHTML = text;
+    }
+    
+    if(document.getElementById("coldAppetizerMin")!=null){
+        var doc = document.getElementById("coldDishesMin");
+        var prev = doc.innerHTML;
+        for(i=0;i<dataColdMin.length;i++){
+            if(dataColdMin[i]!=undefined){
+                doc.innerHTML = prev + dataColdMin[i];
+                prev = doc.innerHTML;
+            }
+        }
+    }
 }
 
 /* IZLISTAVAJU HRANU ZA MINIMIZIRAN SCREEN */
@@ -248,7 +283,7 @@ function printOrderToHtml(cart){
             var spaces = 26 -  cart[i].name.length; 
         }
         var text = `<div class="d-flex align-items-center bd-highlight">
-        <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size:large; width:21.484375vw !important;">${cart[i].name}</p></div>
+        <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size:large; width:20vw !important;">${cart[i].name}</p></div>
         <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].price},00</p></div>
         <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].currency}</p></div>
         <div class="p-2 bd-highlight"><p style="font-size:large;"> x${cart[i].portions}</p></div>
@@ -322,14 +357,14 @@ function printTotalPriceToHtmlExpFromMin(){
         if(priceSum!=0){
             prc.innerHTML =`<h2>` + priceSum + ',00 '+ cart[0].currency + `</h2>`;
         }else{
-            prc.innerHTML =`<h2>00,00</h2>`;
+            prc.innerHTML =`<h2>00,00 HRK</h2>`;
         }
         document.getElementById("underlining2").style.borderBottom = '1px solid #cfa670';
         document.getElementById("underlining2").style.width = '100%';
     }else{
         var doc = document.getElementById("cartitems");
         if(doc!=null){
-            doc.innerHTML="<h3>Nema odabrane hrane</h3>";
+            doc.innerHTML="";
         }
         
         var prc = document.getElementById("priceSum");
@@ -355,8 +390,11 @@ function printOrderToHtmlMinFromExp(){
         </button>
         </p></div>
         </div>`
-        doc.innerHTML = prev + text;
-        prev = doc.innerHTML;
+        if(doc!=null){
+            doc.innerHTML = prev + text;
+            prev = doc.innerHTML;
+        }
+        
     }
 }
 function printTotalPriceToHtmlMinFromExp(){
@@ -375,14 +413,14 @@ function printTotalPriceToHtmlMinFromExp(){
         if(priceSum!=0){
             prc.innerHTML =`<h2>` + priceSum + ',00 '+ cart[0].currency + `</h2>`;
         }else{
-            prc.innerHTML =`<h2>00,00</h2>`;
+            prc.innerHTML =`<h2>00,00 HRK</h2>`;
         }
         document.getElementById("underlining2").style.borderBottom = '1px solid #cfa670';
         document.getElementById("underlining2").style.width = '100%';
     }else{
         var doc = document.getElementById("cartitemsMin");
         if(doc!=null){
-            doc.innerHTML="<h3>Nema odabrane hrane</h3>";
+            doc.innerHTML="";
         }
         var prc = document.getElementById("priceSumMin");
         if(prc!=null){
@@ -409,13 +447,13 @@ function printTotalPriceToHtml(cart){
         if(priceSum!=0){
             prc.innerHTML =`<h2>` + priceSum + ',00 '+ cart[0].currency + `</h2>`;
         }else{
-            prc.innerHTML =`<h2>00,00</h2>`;
+            prc.innerHTML =`<h2>00,00 HRK</h2>`;
         }
         document.getElementById("underlining2").style.borderBottom = '1px solid #cfa670';
         document.getElementById("underlining2").style.width = '100%';
     }else{
         var doc = document.getElementById("cartitems");
-        doc.innerHTML="<h3>Nema odabrane hrane</h3>";
+        doc.innerHTML="";
         var prc = document.getElementById("priceSum");
         prc.innerHTML =`<h2>00,00 HRK</h2>`;
     }
@@ -436,13 +474,13 @@ function printTotalPriceToHtmlMin(cart){
         if(priceSum!=0){
             prc.innerHTML =`<h2>` + priceSum + ',00 '+ cart[0].currency + `</h2>`;
         }else{
-            prc.innerHTML =`<h2>00,00</h2>`;
+            prc.innerHTML =`<h2>00,00 HRK</h2>`;
         }
         document.getElementById("underlining2").style.borderBottom = '1px solid #cfa670';
         document.getElementById("underlining2").style.width = '100%';
     }else{
         var doc = document.getElementById("cartitemsMin");
-        doc.innerHTML="<h3>Nema odabrane hrane</h3>";
+        doc.innerHTML="";
         var prc = document.getElementById("priceSumMin");
         prc.innerHTML =`<h2>00,00 HRK</h2>`;
     }
@@ -789,3 +827,4 @@ function desertsMin(datapassed){
         }
     }
 };
+

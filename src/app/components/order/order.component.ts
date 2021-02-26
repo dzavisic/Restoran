@@ -18,6 +18,7 @@ declare function printOrderToHtmlMinFromExp():any;
 declare function printTotalPriceToHtmlMinFromExp(): any;
 declare function printOrderToHtmlExpFromMin():any;
 declare function printTotalPriceToHtmlExpFromMin(): any;
+declare function listColdJsInit(): any;
 
 @Component({
   selector: 'app-order',
@@ -25,11 +26,6 @@ declare function printTotalPriceToHtmlExpFromMin(): any;
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-
-  loginForm: FormGroup = new FormGroup({
-    username: new FormControl(),
-    password: new FormControl(),
-  });
 
   constructor(private http:HttpClient) { }
 
@@ -66,7 +62,7 @@ export class OrderComponent implements OnInit {
     coldAppetizersMin(data);
     saladsMin(data);
     desertsMin(data);
-    listColdJs();
+    listColdJsInit();
     listAllFoodExpanded();
   }
   
