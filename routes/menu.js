@@ -92,6 +92,17 @@ menuDeleteSingle: (req, res, next) => {
         console.log(err);
         functions.sendRes(res,{ success: false, message: 'Error, please check the passed data.', status: 503, data:err});
     }
+},
+getAllMenu: (req, res, next) => {
+    try{
+        let query = "SELECT * FROM menu";            
+        functions.mysql_queryV2(query,(dataSent)=>{
+            functions.sendRes(res, dataSent);
+        });
+    }catch(err){
+        console.log(err);
+        functions.sendRes(res,{ success: false, message: 'Error, please check the passed data.', status: 503, data:err});
+    }
 }
 };
 
