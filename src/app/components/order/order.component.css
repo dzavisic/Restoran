@@ -86,3 +86,9 @@
     position: sticky !important;
     top: 0 !important;
 }
+
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #cfa670 !important;
+}
+

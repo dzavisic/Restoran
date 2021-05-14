@@ -1,0 +1,75 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-6"><button class="btn btn-secondary btn-lg btn-block" (click)="logoff()">ODJAVA</button></div>
+            <div class="col-6"><button class="btn btn-secondary btn-lg btn-block" [routerLink]="['/cmspanel/reservations']">REZERVACIJE</button></div>
+        </div>
+
+    </div>
+    <div *ngIf="clients$ | async as clients">
+        <div class="container-fluid" id="cont">
+            <div class="row">
+                <div *ngFor="let client of clients" class="col-6 pt-4">
+                    <div class="border border-secondary" id="wrapper">
+                        <div class="container pb-3 pt-2">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h3>
+                                        Narudžba
+                                    </h3>
+                    
+                                    <div *ngIf="orders$ | async as orders">
+                                        <div *ngFor="let order of orders">
+                                            <div *ngIf="order.order_id == client.order_id">
+                                                <div class="row pt-2">
+                                                    <div class="col-6"><h5>{{order.name}}</h5></div>
+                                                    <div class="col-6"><h5>PORCIJA: {{order.portions}}</h5></div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <h3>
+                                        Kupac
+                                    </h3>
+                                    <div class="row">
+                                        <div class="col-6"><h6>Vrijeme narudžbe:</h6></div>
+                                        <div class="col-6"><h6>{{client.datetime}}</h6></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">Ime i prezime:</div>
+                                        <div class="col-6">{{client.name}} {{client.surname}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">Adresa i broj ulice:</div>
+                                        <div class="col-6">{{client.address}} {{client.ad_number}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">Mjesto:</div>
+                                        <div class="col-6">{{client.place}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">Broj telefona:</div>
+                                        <div class="col-6">{{client.tel_numb}}</div>
+                                    </div>
+                                    <div class="row pt-3 pl-3 pr-3">
+                                        <button class="btn btn-primary btn-lg btn-block" (click)="deleteOrder(client.order_id)">Završeno</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>

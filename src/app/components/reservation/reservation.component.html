@@ -1,36 +1,53 @@
+<app-navbar></app-navbar>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kristi&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <div class="background1">
-
+      <div class="container" id="firstContainer">
+        <div class="row">
+          <div class="offset-xl-2 offset-lg-1 col-xl-8 col-lg-10 col-sm-12 col-md-12" id="aboutUs">
+            <h2 id="underlining"><span id="povijest">ispuni</span><p id="obitelj">REZERVACIJU</p></h2>
+            <div>
+              <label for="" class="col">
+                <div class="row align-items-center">
+                    <div class="col"><h5>Ime i prezime:</h5></div>
+                    <div class="col"><input type="text" style="height: 40px;" [(ngModel)] = "fullname" placeholder="Ime i prezime"></div>
+                </div>                   
+            </label>
+            <label for="" class="col">
+              <div class="row align-items-center">
+                    <div class="col"><h5>Broj osoba:</h5></div>
+                    <div class="col"><input type="text" style="height: 40px;" [(ngModel)] = "num_people" placeholder="Broj osoba"></div>
+              </div>
+            </label>
+            <label for="" class="col">
+                <div class="row align-items-center">
+                      <div class="col"><h5>Datum i vrijeme:</h5></div>
+                      <div class="col"><input type="text" style="height: 40px;" [(ngModel)] = "datetime" placeholder="Datum i vrijeme"></div>
+                </div>
+            </label>
+            <label for="" class="col">
+                <div class="row align-items-center">
+                      <div class="col"><h5>Broj telefona:</h5></div>
+                      <div class="col"><input type="text" style="height: 40px;" [(ngModel)] = "tel_numb" placeholder="Broj telefona"></div>
+                </div>
+            </label>
+            <label for="" class="col">
+                <button class="btn btn-secondary btn-block" (click)="sendReservation()" style="background-color: #cfa670 !important;">POŠALJI</button>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="parallax"></div>
     <div class="background2">
 
     </div>
-    <div class="text-white">
-        <footer class="bg-dark bg-gradient" style="height: 120px;">
-            <div class="d-flex justify-content-middle align-items-middle">
-              <div class="d-none d-sm-none d-md-block">
-                <img src="../../../assets/img/logo.png" style="width: 180px; height: 100px;  padding-left: 50px; padding-top: 15px;">
-              </div>
-              <div style="padding-left: 40px; padding-top: 6px;">
-                <h6>KONTAKT</h6>
-                <p class="d-flex align-items-center"><img class="pr-2" src="https://img.icons8.com/material/24/000000/worldwide-location--v1.png"/>732/21 Restoran LU - Trg bana Josipa Šokčevića 2 Vinkovci</p>
-                <p class="d-flex align-items-center"><img class="pr-2" src="https://img.icons8.com/material-rounded/24/000000/phone-not-being-used.png"/>+387 032 333 111</p>
-              </div>
-              <div class="d-none d-sm-none d-md-none d-lg-block" style="padding-left: 350px; padding-top: 20px;">
-                <a href="https://www.facebook.com/RestoranLuVinkovci/"><img style="padding-left: 8px;" src="https://img.icons8.com/material-sharp/50/000000/facebook-new.png"/></a>
-                <h6>FACEBOOK</h6>
-              </div> 
-              <div class="d-none d-sm-none d-md-none d-lg-none d-xl-block"  style="padding-left: 350px; padding-top: 20px;">
-                <a href="https://www.instagram.com/restoranlu/"><img style="padding-left: 8px;" src="https://img.icons8.com/fluent-systems-filled/50/000000/instagram-new.png"/></a>
-                <h6>INSTAGRAM</h6>
-              </div>   
-            </div>
-          </footer>
-    </div>
+    <app-footer></app-footer>
 </body>

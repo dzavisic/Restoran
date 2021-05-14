@@ -15,6 +15,16 @@
     background-repeat: no-repeat;
 }
 
+#rest {
+    color: #cfa670;
+    font-family: 'Kristi', cursive;
+}
+
+#rest1 {
+    color: #cfa670;
+    font-family: 'Italianno', cursive;
+}
+
 .background2 {
     width: 100% !important;
     height: 120vh;
@@ -22,6 +32,13 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.container {
+    padding-top: 250px;
+    animation: transitionIn 4s;
+}
+
+
 .parallax {
     /* The image used */
     background-image: url("../../../assets/img/parallax.jpg");
@@ -34,9 +51,23 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-
-.container {
-    padding-top: 200px;
 }
 
+#carouselOut{
+    outline: none;
+}
+
+#firstContainer {
+    background-color: #292526 !important;
+    padding-top: 10px;
+    color: #cfa670;
+    animation: transitionIn 1s;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #cfa670 !important;
+}
+
+input {
+    color: black !important;
+}

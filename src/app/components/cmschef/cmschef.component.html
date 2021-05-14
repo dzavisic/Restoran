@@ -1,0 +1,58 @@
+<app-panelnav></app-panelnav>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <div class="container pt-5">
+        <div class="row pl-2 pt-5">
+            <h4>Dodavanje:</h4>
+        </div>
+        <div class="row pt-3 align-items-center">
+
+                    <label for="" class="col">
+                        <div class="row align-items-center">
+                            <div class="col"><h5>Chef_id:</h5></div>
+                            <div class="col"><input type="text" style="height: 40px;" [(ngModel)] = "chef_id" placeholder="Chef_id"></div>
+                        </div>                   
+                    </label>
+                    <label for="" class="col">
+                      <div class="row align-items-center">
+                            <div class="col"><h5>Šifra:</h5></div>
+                            <div class="col"><input type="text" style="height: 40px;" [(ngModel)] = "password" placeholder="Šifra"></div>
+                      </div>
+                    </label>
+                    <label for="" class="col">
+                        <button class="btn btn-secondary btn-block" (click)="addChef()"><i class="fa fa-check"></i></button>
+                      </label>
+                
+
+        </div>
+        <div class="row pl-2 pt-5">
+            <h4>Popis:</h4>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div *ngIf="chefs$ | async as chefs">
+                
+                    <div *ngFor="let chef of chefs">
+                    
+                        <div class="row pt-4 justify-content-middle">
+                            <div class="col-2">Chef_id:</div>
+                            <div class="col-3">{{chef.chef_id}}</div>
+                            <div class="col-2">Šifra:</div>
+                            <div class="col-3">{{chef.password}}</div>
+                            <div class="col-2">
+                                <button class="btn btn-secondary btn-block" (click)="removeChef(chef.chef_id)"><i class="fa fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>

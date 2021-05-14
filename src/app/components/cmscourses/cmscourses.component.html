@@ -1,0 +1,56 @@
+<app-panelnav></app-panelnav>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <div class="container pt-5">
+        <div class="row pl-2 pt-5">
+            <h4>Dodavanje:</h4>
+        </div>
+        <div class="row pt-3 align-items-center">
+
+                    <label for="" class="col">
+                        <div class="row align-items-center">
+                            <div class="col"><h5>Id:</h5></div>
+                            <div class="col"><input type="text" style="height: 40px;" [(ngModel)] = "id" placeholder="Id"></div>
+                        </div>                   
+                    </label>
+                    <label for="" class="col">
+                      <div class="row align-items-center">
+                            <div class="col"><h5>Ime:</h5></div>
+                            <div class="col"><input type="text" style="height: 40px;" [(ngModel)] = "name" placeholder="Ime"></div>
+                      </div>
+                    </label>
+                    <label for="" class="col">
+                        <button class="btn btn-secondary btn-block" (click)="addToCourses()"><i class="fa fa-check"></i></button>
+                      </label>
+                
+
+        </div>
+        <div class="row pl-2 pt-5">
+            <h4>Popis:</h4>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div *ngIf="courses$ | async as courses">
+                
+                    <div *ngFor="let course of courses">
+                    
+                        <div class="row pt-4 justify-content-middle">
+                            <div class="col">Id: {{course.id}}</div>
+                            <div class="col">Ime: {{course.name}}</div>
+                            <div class="col-2">
+                                <button class="btn btn-secondary btn-block" (click)="removeFromCourses(course.id)"><i class="fa fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>

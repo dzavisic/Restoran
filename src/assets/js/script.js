@@ -24,6 +24,8 @@ function scrolltop(){
     });
 }
 
+
+
 /* IZLISTAVA SVA JELA ZA MAXIMIZIRAN SCREEN */
 function listAllFoodExpanded(){
     let text = `
@@ -278,68 +280,77 @@ function listDesertJs(){
 function printOrderToHtml(cart){
     var doc = document.getElementById("cartitems");
     var prev = "";
-    for(i=0;i<cart.length;i++){
-        if(cart[i].name.length<26){
-            var spaces = 26 -  cart[i].name.length; 
+    if(document.getElementById("cartitems")!=null){
+        for(i=0;i<cart.length;i++){
+            if(cart[i].name.length<26){
+                var spaces = 26 -  cart[i].name.length; 
+            }
+            var text = `<div class="d-flex align-items-center bd-highlight">
+            <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size:large; width:20vw !important;">${cart[i].name}</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].price},00</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].currency}</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;"> x${cart[i].portions}</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;"><button type="button" style="background-color: #cfa670;" class="btn btn-default btn-sm" onclick="removeFromCart('${cart[i].name}','${cart[i].price}')">
+            <img src="https://img.icons8.com/metro/20/ffffff/minus-math.png"/>
+            </button>
+            </p></div>
+    
+            
+            </div>`
+            doc.innerHTML = prev + text;
+            prev = doc.innerHTML;
         }
-        var text = `<div class="d-flex align-items-center bd-highlight">
-        <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size:large; width:20vw !important;">${cart[i].name}</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].price},00</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].currency}</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;"> x${cart[i].portions}</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;"><button type="button" style="background-color: #cfa670;" class="btn btn-default btn-sm" onclick="removeFromCart('${cart[i].name}','${cart[i].price}')">
-        <img src="https://img.icons8.com/metro/20/ffffff/minus-math.png"/>
-        </button>
-        </p></div>
-
-        
-        </div>`
-        doc.innerHTML = prev + text;
-        prev = doc.innerHTML;
     }
+    
 }
 function printOrderToHtmlMin(cart){
     var doc = document.getElementById("cartitemsMin");
     var prev = "";
-    for(i=0;i<cart.length;i++){
-        var text = `<div class="d-flex align-items-center bd-highlight">
-        <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size:large; width:40.484375vw !important;">${cart[i].name}</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].price},00</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].currency}</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;"> x${cart[i].portions}</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;"><button type="button" style="background-color: #cfa670;" class="btn btn-default btn-sm" onclick="removeFromCartMin('${cart[i].name}','${cart[i].price}')">
-        <img src="https://img.icons8.com/metro/20/ffffff/minus-math.png"/>
-        </button>
-        </p></div>
-        </div>`
-        doc.innerHTML = prev + text;
-        prev = doc.innerHTML;
+    if(document.getElementById("cartitemsMin")!=null){
+        for(i=0;i<cart.length;i++){
+            var text = `<div class="d-flex align-items-center bd-highlight">
+            <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size:large; width:40.484375vw !important;">${cart[i].name}</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].price},00</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].currency}</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;"> x${cart[i].portions}</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;"><button type="button" style="background-color: #cfa670;" class="btn btn-default btn-sm" onclick="removeFromCartMin('${cart[i].name}','${cart[i].price}')">
+            <img src="https://img.icons8.com/metro/20/ffffff/minus-math.png"/>
+            </button>
+            </p></div>
+            </div>`
+            doc.innerHTML = prev + text;
+            prev = doc.innerHTML;
+        }
     }
+    
 }
 
 /* IZLISTAVA KOSARICU POPUNJENU DOLJE PA U MAKSIMIZIRANI PRIKAZ */
 function printOrderToHtmlExpFromMin(){
     var doc = document.getElementById("cartitems");
     var prev = "";
-    for(i=0;i<cart.length;i++){
-        if(cart[i].name.length<26){
-            var spaces = 26 -  cart[i].name.length; 
+    if(document.getElementById("cartitems")!=null){
+        for(i=0;i<cart.length;i++){
+            if(cart[i].name.length<26){
+                var spaces = 26 -  cart[i].name.length; 
+            }
+            var text = `<div class="d-flex align-items-center bd-highlight">
+            <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size:large; width:21.484375vw !important;">${cart[i].name}</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].price},00</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].currency}</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;"> x${cart[i].portions}</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;"><button type="button" style="background-color: #cfa670;" class="btn btn-default btn-sm" onclick="removeFromCart('${cart[i].name}','${cart[i].price}')">
+            <img src="https://img.icons8.com/metro/20/ffffff/minus-math.png"/>
+            </button>
+            </p></div>
+    
+            
+            </div>`
+            doc.innerHTML = prev + text;
+            prev = doc.innerHTML;
         }
-        var text = `<div class="d-flex align-items-center bd-highlight">
-        <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size:large; width:21.484375vw !important;">${cart[i].name}</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].price},00</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].currency}</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;"> x${cart[i].portions}</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;"><button type="button" style="background-color: #cfa670;" class="btn btn-default btn-sm" onclick="removeFromCart('${cart[i].name}','${cart[i].price}')">
-        <img src="https://img.icons8.com/metro/20/ffffff/minus-math.png"/>
-        </button>
-        </p></div>
-
-        
-        </div>`
-        doc.innerHTML = prev + text;
-        prev = doc.innerHTML;
     }
+    
 }
 function printTotalPriceToHtmlExpFromMin(){
     priceSum=0;
@@ -355,12 +366,21 @@ function printTotalPriceToHtmlExpFromMin(){
         }
         var prc = document.getElementById("priceSum");
         if(priceSum!=0){
-            prc.innerHTML =`<h2>` + priceSum + ',00 '+ cart[0].currency + `</h2>`;
+            if(prc!=null){
+                prc.innerHTML =`<h2>` + priceSum + ',00 '+ cart[0].currency + `</h2>`;
+            }
+            
         }else{
-            prc.innerHTML =`<h2>00,00 HRK</h2>`;
+            if(prc!=null){
+                prc.innerHTML =`<h2>00,00 HRK</h2>`;
+            }
+            
         }
-        document.getElementById("underlining2").style.borderBottom = '1px solid #cfa670';
-        document.getElementById("underlining2").style.width = '100%';
+        if(document.getElementById("underlining2")!=null){
+            document.getElementById("underlining2").style.borderBottom = '1px solid #cfa670';
+            document.getElementById("underlining2").style.width = '100%';
+        }
+        
     }else{
         var doc = document.getElementById("cartitems");
         if(doc!=null){
@@ -379,23 +399,26 @@ function printTotalPriceToHtmlExpFromMin(){
 function printOrderToHtmlMinFromExp(){
     var doc = document.getElementById("cartitemsMin");
     var prev = "";
-    for(i=0;i<cart.length;i++){
-        var text = `<div class="d-flex align-items-center bd-highlight">
-        <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size:large; width:40.484375vw !important;">${cart[i].name}</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].price},00</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].currency}</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;"> x${cart[i].portions}</p></div>
-        <div class="p-2 bd-highlight"><p style="font-size:large;"><button type="button" style="background-color: #cfa670;" class="btn btn-default btn-sm" onclick="removeFromCartMin('${cart[i].name}','${cart[i].price}')">
-        <img src="https://img.icons8.com/metro/20/ffffff/minus-math.png"/>
-        </button>
-        </p></div>
-        </div>`
-        if(doc!=null){
-            doc.innerHTML = prev + text;
-            prev = doc.innerHTML;
+    if(document.getElementById("cartitemsMin")!=null){
+        for(i=0;i<cart.length;i++){
+            var text = `<div class="d-flex align-items-center bd-highlight">
+            <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size:large; width:40.484375vw !important;">${cart[i].name}</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].price},00</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].currency}</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;"> x${cart[i].portions}</p></div>
+            <div class="p-2 bd-highlight"><p style="font-size:large;"><button type="button" style="background-color: #cfa670;" class="btn btn-default btn-sm" onclick="removeFromCartMin('${cart[i].name}','${cart[i].price}')">
+            <img src="https://img.icons8.com/metro/20/ffffff/minus-math.png"/>
+            </button>
+            </p></div>
+            </div>`
+            if(doc!=null){
+                doc.innerHTML = prev + text;
+                prev = doc.innerHTML;
+            }
+            
         }
-        
     }
+    
 }
 function printTotalPriceToHtmlMinFromExp(){
     priceSum=0;
@@ -411,12 +434,21 @@ function printTotalPriceToHtmlMinFromExp(){
         }
         var prc = document.getElementById("priceSumMin");
         if(priceSum!=0){
-            prc.innerHTML =`<h2>` + priceSum + ',00 '+ cart[0].currency + `</h2>`;
+            if(prc!=null){
+                prc.innerHTML =`<h2>` + priceSum + ',00 '+ cart[0].currency + `</h2>`;
+            }
+            
         }else{
-            prc.innerHTML =`<h2>00,00 HRK</h2>`;
+            if(prc!=null){
+                prc.innerHTML =`<h2>00,00 HRK</h2>`;
+            }
+            
         }
-        document.getElementById("underlining2").style.borderBottom = '1px solid #cfa670';
-        document.getElementById("underlining2").style.width = '100%';
+        if(document.getElementById("underlining2")!=null){
+            document.getElementById("underlining2").style.borderBottom = '1px solid #cfa670';
+            document.getElementById("underlining2").style.width = '100%';
+        }
+        
     }else{
         var doc = document.getElementById("cartitemsMin");
         if(doc!=null){
@@ -828,3 +860,16 @@ function desertsMin(datapassed){
     }
 };
 
+function getCartItems(){
+    return this.cart;
+}
+
+function makeToken() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  
+    for (var i = 0; i < 50; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  
+    return text;
+};

@@ -34,4 +34,31 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
+
+
+#firstContainer {
+    padding-top: 200px;
+    color: #cfa670;
+    animation: transitionIn 1s;
+}
+#underlining {
+    border-bottom: 1px solid #cfa670;
+    width: 100%;
+}
+#aboutUs{
+    background-color: #292526;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+#povijest {
+    color: #cfa670;
+    font-style: italic;
+    font-family: 'Kristi', cursive;
+    font-size: 70px; z-index: 100; position: absolute;
+}
+
+#obitelj{
+    color:white; font-size: 50px; font-family: Roboto; padding-top: 60px;
+}

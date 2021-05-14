@@ -1,0 +1,26 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      
+  
+      
+      <div class="fadeIn first">
+        <h3 class="pt-4 pb-3">Prijavi se</h3>
+      </div>
+  
+      
+      <form>
+        <input type="text" id="chef_id" class="fadeIn second" [(ngModel)]="id" name="chef_id" placeholder="Korisnički id">
+        <input type="password" id="password" class="fadeIn third" [(ngModel)]="password" name="password" placeholder="Šifra">
+        <input type="submit" class="fadeIn fourth" value="Prijavi se" (click)="login()">
+        <!--
+        <input type="submit" class="fadeIn fourth" value="Prijavi se" (click)="signIn('Google')">
+        -->
+        
+      </form>
+      
+      
+      <div id="formFooter">
+        <a class="underlineHover" href="/">Odustani</a>
+      </div>
+    </div>
+</div>

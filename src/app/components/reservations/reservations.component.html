@@ -1,0 +1,38 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <div class="container pt-5">
+        <div class="row pt-3 align-items-center">
+            <div class="col-6"><button class="btn btn-secondary btn-lg btn-block" (click)="logoff()">ODJAVA</button></div>
+            <div class="col-6"><button class="btn btn-secondary btn-lg btn-block" [routerLink]="['/kitchen']">NARUDŽBE</button></div>
+        </div>
+        <div class="row pl-2 pt-5">
+            <h4>Popis:</h4>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div *ngIf="reservations$ | async as reservations">
+                
+                    <div *ngFor="let reservation of reservations">
+                    
+                        <div class="row pt-4 justify-content-middle">
+                            <div class="col">Ime i prezime: {{reservation.fullname}}</div>
+                            <div class="col">Broj osoba: {{reservation.num_people}}</div>
+                            <div class="col">Datum i vrijeme: {{reservation.datetime}}</div>
+                            <div class="col">Broj telefona: {{reservation.tel_numb}}</div>
+                            <div class="col">
+                                <button class="btn btn-secondary btn-block" (click)="deleteReservation(reservation.fullname)"><i class="fa fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
