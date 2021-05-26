@@ -23,16 +23,26 @@ export class KitchenComponent implements OnInit {
     if(!!localStorage.getItem('token')==false){
       window.location.href="/login"
     }
-
     this.clients$ = this.order.clientData$.pipe(
       //tap(data => console.log(data.data)),
       map(data => data.data)
-    )
+    );
     this.orders$ = this.order.orderData$.pipe(
       //tap(data => console.log(data.data)),
-      map(data => data.data)
+      map(data => data.data),
+      
     );
-    
+    setInterval(()=>{
+      this.clients$ = this.order.clientData$.pipe(
+        //tap(data => console.log(data.data)),
+        map(data => data.data)
+      );
+      this.orders$ = this.order.orderData$.pipe(
+        //tap(data => console.log(data.data)),
+        map(data => data.data),
+        
+      );
+    },15000)
   }
 
   deleteOrder(order_id:any){
