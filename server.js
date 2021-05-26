@@ -3,7 +3,6 @@ var mysql       = require('mysql');
 var bcrypt      = require('bcrypt');
 var app         = express();
 var http        = require('http');
-var md5         = require('MD5');
 var cors        = require('cors');
 var bodyParser  = require('body-parser');
 var apiToken    = require('api-token');
