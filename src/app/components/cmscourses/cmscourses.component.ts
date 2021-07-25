@@ -21,6 +21,31 @@ export class CmscoursesComponent implements OnInit {
       map(data => data.data)
     )
   }
+
+  download(filename:any, jsontext:any){
+    var strinng = "Id Ime";
+    for(let i=0; i<jsontext.length; i++){
+      strinng = strinng + "\n" + jsontext[i]['id'] + " " + jsontext[i]['name'];
+    }
+    var text = strinng;
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+  
+    element.style.display = 'none';
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+  }
+  downloadCourse(){
+
+    this.courses$ = this.order.coursesData$.pipe(
+      tap(data => this.download('courses_list.txt',data.data)),
+      map(data => data.data)
+    )
+  }
   addToCourses(){
     let url1 = "http://localhost:3014/api/addCourse";
     this.http.post(url1,{id:this.id, name: this.name}).toPromise().then((data:any) => {});

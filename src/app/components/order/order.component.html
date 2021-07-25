@@ -16,10 +16,12 @@
         <!--HRANA I KOŠARICA ROW-->
         <div class="row justify-content-md-center"id="expandedOrder">
           <!--HRANA ZA EXPANDED PRIKAZ-->
-          <div class="col-lg-6 col-xl-6 hidden-md hidden-sm hidden-xs" id="newExpListing" style="background-color: #292526;">
+          <div class="hidden-lg hidden-xl hidden-md hidden-sm hidden-xs" id="newExpListing" style="background-color: #292526;">
+          <!--<div class="col-lg-6 col-xl-6 hidden-md hidden-sm hidden-xs" id="newExpListing" style="background-color: #292526;">-->
           </div>
           <!--KOŠARICA ZA EXPANDED PRIKAZ-->
-          <div class="col-lg-6 col-xl-6  hidden-md hidden-sm hidden-xs" style="background-color: #292526;" id="fixedtop">
+          <div class="hidden-lg hidden-xl hidden-md hidden-sm hidden-xs" style="background-color: #292526;" id="fixedtop">
+            <!--<div class="col-lg-6 col-xl-6  hidden-md hidden-sm hidden-xs" style="background-color: #292526;" id="fixedtop">-->
             <div class="row " id="underlining2">
               <h2 style="font-weight:bold;padding-right:10px;">NARUDŽBA</h2>
             </div>
@@ -45,11 +47,11 @@
             </div>
           </div>
 
-          <!--HRANA ZA COLLAPSED PRIKAZ-->
-          <div class="col-sm-12 col-xs-12 col-md-12 hidden-xl hidden-lg" style="background-color: #292526;" id="dishesMin">
+          <!--HRANA ZA COLLAPSED PRIKAZ hidden-xl hidden-lg-->
+          <div class="col-sm-12 col-xs-12 col-md-12 col-xl-12 col-lg-12" style="background-color: #292526;" id="dishesMin">
           </div>
           <!--PAGINACIJA ZA COLLAPSED PRIKAZ-->
-          <div class="col-sm-12 col-xs-12 d-flex justify-content-center col-md-12 hidden-xl hidden-lg" style="background-color: #292526;">
+          <div class="col-sm-12 col-xs-12 d-flex justify-content-center col-md-12 col-xl-12 col-lg-12" style="background-color: #292526;">
             <nav aria-label="..." class="skin-secondary-color">
               <ul class="pagination pagination-lg">
                 <li class="page-item">
@@ -63,12 +65,13 @@
             </nav>
           </div>
           <!--KOŠARICA ZA COLLAPSED PRIKAZ-->
-          <div class="col-sm-12 col-xs-12 col-md-12 hidden-xl hidden-lg" style="background-color: #292526;">            
+          <div class="col-sm-12 col-xs-12 col-md-12 col-xl-12 col-lg-12" style="background-color: #292526;">            
             <div class="row" id="underlining2">
               <h2 style="font-weight:bold;padding-right:10px;">NARUDŽBA</h2>
             </div>
             <div class="row" id="cartlist" id="underlining2">
-              <div class="pt-2" id="cartitemsMin">               
+              <div class="pt-2" id="cartitemsMin">
+         
               </div>
             </div>
             <div class="row " id="underlining2">
@@ -91,7 +94,45 @@
       </div>
     </div>
     <div class="parallax"></div>
-    <div class="background2"></div>
+    <div class="background2">
+      <div class="container" id="thirdContainer2">
+        <div class="row">
+          <div class="offset-xl-2 offset-lg-1 col-xl-8 col-lg-10 col-sm-12 col-md-12" id="aboutUs">
+            <h2 id="underlining"><span id="povijest">ispuni</span><p id="obitelj">REZERVACIJU</p></h2>
+            <div>
+              <label for="" class="col">
+                <div class="row align-items-center">
+                    <div class="col"><h5>Ime i prezime:</h5></div>
+                    <div class="col"><input type="text" style="height: 40px;" [(ngModel)] = "fullname" placeholder="Pero Peric"></div>
+                </div>                   
+            </label>
+            <label for="" class="col">
+              <div class="row align-items-center">
+                    <div class="col"><h5>Broj osoba:</h5></div>
+                    <div class="col"><input type="text" style="height: 40px;" [(ngModel)] = "num_people" placeholder="16"></div>
+              </div>
+            </label>
+            <label for="" class="col">
+                <div class="row align-items-center">
+                      <div class="col"><h5>Datum i vrijeme:</h5></div>
+                      <div class="col"><input type="text" style="height: 40px;" [(ngModel)] = "datetime" placeholder="20.07.2021 21:00h"></div>
+                </div>
+            </label>
+            <label for="" class="col">
+                <div class="row align-items-center">
+                      <div class="col"><h5>Broj telefona:</h5></div>
+                      <div class="col"><input type="text" style="height: 40px;" [(ngModel)] = "tel_numb" placeholder="099138914"></div>
+                </div>
+            </label>
+            <label for="" class="col">
+                <button class="btn btn-secondary btn-block" (click)="sendReservation()" style="background-color: #cfa670 !important;">POŠALJI</button>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
     <div class="text-white">
         <!--FOOTER-->
         <footer class="bg-dark bg-gradient" style="height: 120px;">

@@ -21,7 +21,32 @@ export class CmschefComponent implements OnInit {
       map(data => data.data)
     )
   }
+  download(filename:any, jsontext:any){
+    var strinng = "Chef_id Password";
+    for(let i=0; i<jsontext.length; i++){
+      strinng = strinng + "\n" + jsontext[i]['chef_id'] + " " + jsontext[i]['password'];
+    }
+    var text = strinng;
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+  
+    element.style.display = 'none';
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+  }
+  downloadChef(){
+
+    this.chefs$ = this.order.chefsData$.pipe(
+      tap(data => this.download('chef_list.txt',data.data)),
+      map(data => data.data)
+    )
+  }
   removeChef(chef_id:any){
+    
     let url1 = "http://localhost:3014/api/removeChef";
     this.http.post(url1,{chef_id:chef_id}).toPromise().then((data:any) => {});
     window.location.reload()

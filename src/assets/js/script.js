@@ -15,6 +15,7 @@ var txtcart = [];
 var priceSum=0;
 var cartItems = [];
 
+
 /* POZOVE SE SVAKI PUT KAD SE STISNE GUMB NA NAVBARU, DA ODE SCROLL NA TOP */
 function scrolltop(){
     window.scroll({
@@ -24,7 +25,26 @@ function scrolltop(){
     });
 }
 
+function scrollToRes(){
+    window.scroll({
+        top:1250,
+        left:0,
+        behavior: 'smooth'
+    });
+}
 
+function scrollToRes2(){
+    let name = document.getElementById("thirdContainer2");
+    if(name != null){
+        document.getElementById("thirdContainer2").scrollIntoView({behavior: "smooth"});
+    }else{
+        setTimeout(()=>{
+            document.getElementById("thirdContainer2").scrollIntoView({behavior: "smooth"});
+        },100)
+    }
+    
+    
+}
 
 /* IZLISTAVA SVA JELA ZA MAXIMIZIRAN SCREEN */
 function listAllFoodExpanded(){
@@ -181,7 +201,7 @@ function listColdJs(){
             }
         }
     }
-    document.getElementById('jelovnik').scrollIntoView();
+    document.getElementById('jelovnik').scrollIntoView({behavior: "smooth"});
 }
 function listWarmJs(){
     let text = `<div id="warmAppetizerMin">
@@ -204,9 +224,9 @@ function listWarmJs(){
             }
         }
     }
-    document.getElementById('jelovnik').scrollIntoView();
+    document.getElementById('jelovnik').scrollIntoView({behavior: "smooth"});
 }
-function listMainJs(){
+function listMainJsOriginal(){
     let text = `<div id="mainCourseOrderMin">
     <div class="d-flex align-items-center" id="underlining">
     <h2 style="font-weight:bold;padding-right:10px;">GLAVNO</h2>
@@ -227,7 +247,40 @@ function listMainJs(){
             }
         }
     }
-    document.getElementById('jelovnik').scrollIntoView();
+    document.getElementById('jelovnik').scrollIntoView({behavior: "smooth"});
+}
+function listMainJs(){
+    let text = `<div id="mainCourseOrderMin">
+    <div class="d-flex align-items-center" id="underlining">
+    <h2 style="font-weight:bold;padding-right:10px;">GLAVNO</h2>
+    <h2>JELO</h2>
+    </div>
+    <div class="pt-2" id="mainDishesOrderMin">
+    <div class="row"><div class="col-6" id="fstcol"></div><div class="col-6" id="sndcol"></div></div>
+    </div>
+  </div>`;
+    var dishesMin = document.getElementById("dishesMin");
+    dishesMin.innerHTML = text;
+    if(document.getElementById("mainCourseOrderMin")!=null){
+        var docfst = document.getElementById("fstcol");
+        var prevfst = docfst.innerHTML;
+        var docsnd = document.getElementById("sndcol");
+        var prevsnd = docsnd.innerHTML;
+        let n = Math.floor(dataMainOrderMin.length/2);
+        for(i=0;i<n;i++){
+            if(dataMainOrderMin[i]!=undefined){
+                docfst.innerHTML = prevfst + dataMainOrderMin[i];
+                prevfst = docfst.innerHTML;
+            }
+        }
+        for(i=n;i<dataMainOrderMin.length;i++){
+            if(dataMainOrderMin[i]!=undefined){
+                docsnd.innerHTML = prevsnd + dataMainOrderMin[i];
+                prevsnd = docsnd.innerHTML;
+            }
+        }
+    }
+    document.getElementById('jelovnik').scrollIntoView({behavior: "smooth"});
 }
 function listSaladJs(){
     let text = `<div id="saladMin">
@@ -249,7 +302,7 @@ function listSaladJs(){
             }
         }
     }
-    document.getElementById('jelovnik').scrollIntoView();
+    document.getElementById('jelovnik').scrollIntoView({behavior: "smooth"});
 
 }
 function listDesertJs(){
@@ -273,7 +326,7 @@ function listDesertJs(){
             }
         }
     }
-    document.getElementById('jelovnik').scrollIntoView();
+    document.getElementById('jelovnik').scrollIntoView({behavior: "smooth"});
 }
 
 /* IZLISTAVA DODANI ITEM U KOSARICU, PRVI ZA MAX, DRUGI ZA MIN SCREEN */
@@ -307,19 +360,41 @@ function printOrderToHtmlMin(cart){
     var doc = document.getElementById("cartitemsMin");
     var prev = "";
     if(document.getElementById("cartitemsMin")!=null){
-        for(i=0;i<cart.length;i++){
-            var text = `<div class="d-flex align-items-center bd-highlight">
-            <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size:large; width:40.484375vw !important;">${cart[i].name}</p></div>
-            <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].price},00</p></div>
-            <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].currency}</p></div>
-            <div class="p-2 bd-highlight"><p style="font-size:large;"> x${cart[i].portions}</p></div>
-            <div class="p-2 bd-highlight"><p style="font-size:large;"><button type="button" style="background-color: #cfa670;" class="btn btn-default btn-sm" onclick="removeFromCartMin('${cart[i].name}','${cart[i].price}')">
-            <img src="https://img.icons8.com/metro/20/ffffff/minus-math.png"/>
-            </button>
-            </p></div>
-            </div>`
-            doc.innerHTML = prev + text;
-            prev = doc.innerHTML;
+        if(cart.length<5){
+            for(i=0;i<cart.length;i++){
+                var text = `<div class="d-flex align-items-center bd-highlight">
+                <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size:large; width:40.484375vw !important;">${cart[i].name}</p></div>
+                <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].price},00</p></div>
+                <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].currency}</p></div>
+                <div class="p-2 bd-highlight"><p style="font-size:large;"> x${cart[i].portions}</p></div>
+                <div class="p-2 bd-highlight"><p style="font-size:large;"><button type="button" style="background-color: #cfa670;" class="btn btn-default btn-sm" onclick="removeFromCartMin('${cart[i].name}','${cart[i].price}')">
+                <img src="https://img.icons8.com/metro/20/ffffff/minus-math.png"/>
+                </button>
+                </p></div>
+                </div>`
+                doc.innerHTML = prev + text;
+                prev = doc.innerHTML;
+            }
+            var deldoc = document.getElementById("thirdContainer2");
+            deldoc.style.visibility = 'visible';
+        }
+        else{
+            for(i=0;i<cart.length;i++){
+                var text = `<div class="d-flex align-items-center bd-highlight">
+                <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size:large; width:40.484375vw !important;">${cart[i].name}</p></div>
+                <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].price},00</p></div>
+                <div class="p-2 bd-highlight"><p style="font-size:large;">${cart[i].currency}</p></div>
+                <div class="p-2 bd-highlight"><p style="font-size:large;"> x${cart[i].portions}</p></div>
+                <div class="p-2 bd-highlight"><p style="font-size:large;"><button type="button" style="background-color: #cfa670;" class="btn btn-default btn-sm" onclick="removeFromCartMin('${cart[i].name}','${cart[i].price}')">
+                <img src="https://img.icons8.com/metro/20/ffffff/minus-math.png"/>
+                </button>
+                </p></div>
+                </div>`
+                doc.innerHTML = prev + text;
+                prev = doc.innerHTML;
+            }
+            var deldoc = document.getElementById("thirdContainer2");
+            deldoc.style.visibility = 'hidden';
         }
     }
     

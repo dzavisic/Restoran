@@ -23,6 +23,30 @@ export class CmsmenuComponent implements OnInit {
       map(data => data.data)
     )
   }
+  download(filename:any, jsontext:any){
+    var strinng = "Courses_id Ime Cijena Valuta";
+    for(let i=0; i<jsontext.length; i++){
+      strinng = strinng + "\n" + jsontext[i]['courses_id'] + " " + jsontext[i]['name'] + " " + jsontext[i]['price'] + " " + jsontext[i]['currency'];
+    }
+    var text = strinng;
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+  
+    element.style.display = 'none';
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+  }
+  downloadMeni(){
+
+    this.menus$ = this.order.menusData$.pipe(
+      tap(data => this.download('menu_list.txt',data.data)),
+      map(data => data.data)
+    )
+  }
 
   addToMenu(){
     let url1 = "http://localhost:3014/api/menuAddDish";

@@ -64,7 +64,10 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "client:build"
+            "browserTarget": "client:build",
+            "ssl": false,
+            "sslKey": "C:\\Users\\dakiz\\Documents\\Fakultet\\Projekti\\Restoran\\client\\localhost.key",
+            "sslCert": "C:\\Users\\dakiz\\Documents\\Fakultet\\Projekti\\Restoran\\client\\localhost.crt"
           },
           "configurations": {
             "production": {
