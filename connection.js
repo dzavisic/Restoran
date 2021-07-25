@@ -6,7 +6,7 @@ function Connection() {
   // 0 - localhost baza
   // 1 (ili bilo koja vrijednost) - baza 115
   //var online = 1;
-  var online=1;
+  var online=0;
   if(online){
     this.init = function() {
       this.pool = mysql.createPool({
