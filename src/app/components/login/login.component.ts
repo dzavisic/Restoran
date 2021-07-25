@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       if(data['success']===true){
         let tokenized = makeToken();
         localStorage.setItem('token', tokenized);
-        window.location.href="http://localhost:4200/kitchen";
+        window.location.href="https://restoran-lu-client.herokuapp.com/kitchen";
       }
     });
     let url2 = "https://restoran-lu-server.herokuapp.com/api/login/cms";
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       if(data['success']===true){
         let tokenized = makeToken();
         localStorage.setItem('token', tokenized);
-        window.location.href="http://localhost:4200/cmspanel";
+        window.location.href="https://restoran-lu-client.herokuapp.com/cmspanel";
       }
     });
   }
