@@ -46,9 +46,9 @@ export class KitchenComponent implements OnInit {
   }
 
   deleteOrder(order_id:any){
-    let url1 = "http://localhost:3014/api/deleteOrder";
+    let url1 = "https://restoran-lu-server.herokuapp.com/api/deleteOrder";
     this.http.post(url1,{order_id:order_id}).toPromise().then((data:any) => {});
-    let url2 = "http://localhost:3014/api/deleteClient";
+    let url2 = "https://restoran-lu-server.herokuapp.com/api/deleteClient";
     this.http.post(url2,{order_id:order_id}).toPromise().then((data:any) => {});
     window.location.reload();
   }

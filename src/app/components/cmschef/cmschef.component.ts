@@ -47,12 +47,12 @@ export class CmschefComponent implements OnInit {
   }
   removeChef(chef_id:any){
     
-    let url1 = "http://localhost:3014/api/removeChef";
+    let url1 = "https://restoran-lu-server.herokuapp.com/api/removeChef";
     this.http.post(url1,{chef_id:chef_id}).toPromise().then((data:any) => {});
     window.location.reload()
   }
   addChef(){
-    let url1 = "http://localhost:3014/api/addChef";
+    let url1 = "https://restoran-lu-server.herokuapp.com/api/addChef";
     this.http.post(url1,{chef_id:this.chef_id, password: this.password}).toPromise().then((data:any) => {});
     window.location.reload()
   }

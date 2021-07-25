@@ -27,7 +27,7 @@ export class ReservationsComponent implements OnInit {
   }
 
   deleteReservation(fullname:any){
-    let url1 = "http://localhost:3014/api/deleteReservation";
+    let url1 = "https://restoran-lu-server.herokuapp.com/api/deleteReservation";
     this.http.post(url1,{fullname:fullname}).toPromise().then((data:any) => {});
     window.location.reload();
   }

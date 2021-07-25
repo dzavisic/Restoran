@@ -13,11 +13,11 @@ export class OrderService {
   coursesData$: Observable<any>;
   reservationsData$: Observable<any>;
   constructor(private http: HttpClient) {
-    this.clientData$ = this.http.get('http://localhost:3014/api/getClients');
-    this.orderData$ = this.http.get('http://localhost:3014/api/getOrders');
-    this.chefsData$ = this.http.get('http://localhost:3014/api/getChefs');
-    this.menusData$ = this.http.get('http://localhost:3014/api/getAllMenu');
-    this.coursesData$ = this.http.get('http://localhost:3014/api/getCourses');
-    this.reservationsData$ = this.http.get('http://localhost:3014/api/getReservations');
+    this.clientData$ = this.http.get('https://restoran-lu-server.herokuapp.com/api/getClients');
+    this.orderData$ = this.http.get('https://restoran-lu-server.herokuapp.com/api/getOrders');
+    this.chefsData$ = this.http.get('https://restoran-lu-server.herokuapp.com/api/getChefs');
+    this.menusData$ = this.http.get('https://restoran-lu-server.herokuapp.com/api/getAllMenu');
+    this.coursesData$ = this.http.get('https://restoran-lu-server.herokuapp.com/api/getCourses');
+    this.reservationsData$ = this.http.get('https://restoran-lu-server.herokuapp.com/api/getReservations');
    }
 }

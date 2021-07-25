@@ -41,7 +41,7 @@ export class OrderFormComponent implements OnInit {
     var dateTime = date+' '+time;
     
     
-    let url = "http://localhost:3014/api/placeClient";
+    let url = "https://restoran-lu-server.herokuapp.com/api/placeClient";
     this.http.post(url,{
       order_id: order_id,
       name: this.name,
@@ -55,13 +55,13 @@ export class OrderFormComponent implements OnInit {
       if(data['success']==true){
         for(var i=0; i<cart.length; i++){
           /* NAPRAVIT POST POZIV NA BAZU, SPREMIT ORDER ID NAME I PORTIONS */
-          let url = "http://localhost:3014/api/placeOrders";
+          let url = "https://restoran-lu-server.herokuapp.com/api/placeOrders";
           this.http.post(url,{order_id:order_id, name:cart[i]['name'], portions:cart[i]['portions']}).toPromise().then((data:any) => {
             if(data['success']==false){
               alert("Narudžba nije uspjela, probajte isponove sve!")
-              let url1 = "http://localhost:3014/api/deleteOrder";
+              let url1 = "https://restoran-lu-server.herokuapp.com/api/deleteOrder";
               this.http.post(url1,{order_id:order_id}).toPromise().then((data:any) => {});
-              let url2 = "http://localhost:3014/api/deleteClient";
+              let url2 = "https://restoran-lu-server.herokuapp.com/api/deleteClient";
               this.http.post(url2,{order_id:order_id}).toPromise().then((data:any) => {});
             }
             else{

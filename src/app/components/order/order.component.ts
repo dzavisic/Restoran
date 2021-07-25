@@ -33,7 +33,7 @@ export class OrderComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
-    let url = "http://localhost:3014/api/menuFull";
+    let url = "https://restoran-lu-server.herokuapp.com/api/menuFull";
     this.http.post(url,{}).toPromise().then((data:any) => {
       var datapassed = JSON.parse(JSON.stringify(data));
       this.callJs(datapassed['data']);
@@ -41,7 +41,7 @@ export class OrderComponent implements OnInit {
     window.onresize = this.printLastCart;
   }
   sendReservation(){
-    let url1 = "http://localhost:3014/api/sendReservation";
+    let url1 = "https://restoran-lu-server.herokuapp.com/api/sendReservation";
     this.http.post(url1,{fullname:this.fullname, num_people:this.num_people, datetime:this.datetime, tel_numb:this.tel_numb}).toPromise().then((data:any) => {});
     window.location.href='/';
   }

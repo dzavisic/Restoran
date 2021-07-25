@@ -47,12 +47,12 @@ export class CmscoursesComponent implements OnInit {
     )
   }
   addToCourses(){
-    let url1 = "http://localhost:3014/api/addCourse";
+    let url1 = "https://restoran-lu-server.herokuapp.com/api/addCourse";
     this.http.post(url1,{id:this.id, name: this.name}).toPromise().then((data:any) => {});
     window.location.reload()
   }
   removeFromCourses(id:any){
-    let url1 = "http://localhost:3014/api/removeCourse";
+    let url1 = "https://restoran-lu-server.herokuapp.com/api/removeCourse";
     this.http.post(url1,{id:id}).toPromise().then((data:any) => {});
     window.location.reload()
   }

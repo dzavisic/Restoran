@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     }
   }
   login(){
-    let url1 = "http://localhost:3014/api/login/kitchen";
+    let url1 = "https://restoran-lu-server.herokuapp.com/api/login/kitchen";
     this.http.post(url1,{chef_id:this.id, password:this.password}).toPromise().then((data:any) => {
       if(data['success']===true){
         let tokenized = makeToken();
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
         window.location.href="http://localhost:4200/kitchen";
       }
     });
-    let url2 = "http://localhost:3014/api/login/cms";
+    let url2 = "https://restoran-lu-server.herokuapp.com/api/login/cms";
     this.http.post(url2,{admin_id:this.id, password:this.password}).toPromise().then((data:any) => {
       if(data['success']===true){
         let tokenized = makeToken();

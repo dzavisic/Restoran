@@ -16,7 +16,7 @@ export class ReservationComponent implements OnInit {
   ngOnInit(): void {
   }
   sendReservation(){
-    let url1 = "http://localhost:3014/api/sendReservation";
+    let url1 = "https://restoran-lu-server.herokuapp.com/api/sendReservation";
     this.http.post(url1,{fullname:this.fullname, num_people:this.num_people, datetime:this.datetime, tel_numb:this.tel_numb}).toPromise().then((data:any) => {});
     window.location.href='/';
   }
