@@ -26,7 +26,7 @@ app.use(bodyParser.json()); //json body-parser
 
 
 app.all('/api/*', function(req, res, next){
-
+    res.header('Access-Control-Allow-Origin', '*');
     var token = (req.body && req.body.access_token) || (req.query && req.query.access_token) || req.headers['x-access-token'];
     console.log(req.body);
     
